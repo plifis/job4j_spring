@@ -1,5 +1,6 @@
 package ru.job4j.di;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -8,9 +9,19 @@ public class StartUI {
     private Store store;
     private ConsoleInput input;
 
-    public StartUI(Store store, ConsoleInput input) {
-        this.store = store;
+//    public StartUI(Store store, ConsoleInput input) {
+//        this.store = store;
+//        this.input = input;
+//    }
+
+    @Autowired
+    public void setInput(ConsoleInput input) {
         this.input = input;
+    }
+
+    @Autowired
+    public void setStore(Store store) {
+        this.store = store;
     }
 
     public void add(String value) {
