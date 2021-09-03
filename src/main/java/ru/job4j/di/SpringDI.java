@@ -12,5 +12,8 @@ public class SpringDI {
         ui.add("Ivan ivanov");
         ui.printStore();
         ui.askInput("One. two, three");
+        StartUI uiOther = context.getBean(StartUI.class);
+        uiOther.add("Nikita");
+        uiOther.printStore();
     }
 }
